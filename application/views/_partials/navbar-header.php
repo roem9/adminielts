@@ -38,22 +38,6 @@
                 <?= tablerIcon("photo", "me-1");?>
                 Logo
             </a>
-            <a href="#pengaturanAkun" class="dropdown-item pengaturanAkun" data-bs-toggle="modal">
-                <?= tablerIcon("brand-firefox", "me-1");?>
-                Website
-            </a>
-            <a href="#editPoin" class="dropdown-item editListening" data-bs-toggle="modal">
-                <?= tablerIcon("dice", "me-1");?>
-                Nilai Listening
-            </a>
-            <a href="#editPoin" class="dropdown-item editStructure" data-bs-toggle="modal">
-                <?= tablerIcon("dice", "me-1");?>
-                Nilai Structure
-            </a>
-            <a href="#editPoin" class="dropdown-item editReading" data-bs-toggle="modal">
-                <?= tablerIcon("dice", "me-1");?>
-                Nilai Reading
-            </a>
             <a href="<?= base_url()?>auth/logout" class="dropdown-item">
                 <?= tablerIcon("logout", "me-1");?>
                 Logout

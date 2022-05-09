@@ -15,15 +15,8 @@ var datatable = $('#dataTable').DataTable({
     ajax: {"url": url_base+"tes/loadTes", "type": "POST"},
     columns: [
         {"data": "nama_tes"},
-        {"data": "nama_tes", render : function(data, row, iDisplayIndex){
-            return `
-                <a href='#uploadGambar' class='uploadGambar' data-bs-toggle='modal' data-id='`+iDisplayIndex.id_tes+`'><span class='avatar avatar-sm' style='background-image: url(`+url_base+`assets/logo/`+iDisplayIndex.id_tes+`.png?t=`+Math.random()+`)'></span></a>`
-        }},
         {"data": "tgl_tes"},
-        // {"data": "tgl_pengumuman"},
-        {"data": "nama_soal", render : function(data, row, iDisplayIndex) {
-            return data+" ("+iDisplayIndex.soal+")";
-        }},
+        {"data": "tipe_soal"},
         {"data": "peserta", render : function (data) {
             if(jQuery.browser.mobile == true) return data
             else return "<center>"+data+"</center>"
@@ -46,11 +39,11 @@ var datatable = $('#dataTable').DataTable({
             if(jQuery.browser.mobile == true) return data
             else return "<center>"+data+"</center>"
         }},
-        {"data": "password", "className": "none text-wrap"},
-        {"data": "link", "className": "none text-wrap"},
+        {"data": "link_listening_reading", "className": "none text-wrap"},
+        {"data": "link_writing", "className": "none text-wrap"},
         {"data": "catatan", "className": "none text-wrap"},
     ],
-    order: [[2, 'desc']],
+    order: [[0, 'desc']],
     rowCallback: function(row, data, iDisplayIndex) {
         var info = this.fnPagingInfo();
         var page = info.iPage;
@@ -59,7 +52,7 @@ var datatable = $('#dataTable').DataTable({
     },
     "columnDefs": [
     { "searchable": false, "targets": "" },  // Disable search on first and last columns
-    { "targets": [4, 5, 6], "orderable": false},
+    { "targets": [2,3,4,5], "orderable": false},
     ],
     "rowReorder": {
         "selector": 'td:nth-child(0)'

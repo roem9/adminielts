@@ -28,20 +28,12 @@ class Tes extends MY_Controller {
             "modules/tes.js",
         ];
 
-        $listSoal = $this->tes->get_all("soal", ["hapus" => 0], "nama_soal");
-        foreach ($listSoal as $i => $list) {
-            $data['listSoal'][$i] = $list;
-            $data['listSoal'][$i]['soal'] = jum_soal($list['id_soal']);
-        }
-
         $this->load->view("pages/tes/list", $data);
     }
 
     public function hasil($id){
         $tes = $this->tes->get_one("tes", ["md5(id_tes)" => $id]);
-        $soal = $this->tes->get_one("soal", ["id_soal" => $tes['id_soal']]);
 
-        $data['tipe'] = $soal['tipe_soal'];
         $data['menu'] = "Hasil";
         $data['id'] = $id;
 
@@ -64,141 +56,105 @@ class Tes extends MY_Controller {
             "modules/hasil_tes_toefl.js",
         ];
 
-        if($soal['tipe_soal'] == "TOAFL" || $soal['tipe_soal'] == "TOEFL"){
-            $this->load->view("pages/tes/list-hasil-toefl", $data);
-        } else {
-            $this->load->view("pages/tes/list-hasil-latihan", $data);
+        $this->load->view("pages/tes/list-hasil-toefl", $data);
+    }
+
+    public function jawaban($id){
+        $peserta = $this->tes->get_one("peserta_ielts", ["md5(id)" => $id]);
+
+        $data = explode("|||", $peserta['text_listening_reading']);
+
+        $jawaban = [];
+        foreach ($data as $i => $data) {
+            $jawaban['listening_reading'][$i] = explode("&&&", $data);
         }
+
+        $jawaban['writing'] = explode("|||", $peserta['text_writing']);
+        $jawaban['peserta'] = $peserta;
+
+        $jawaban['title'] = "Jawaban " . $peserta['first_name'] . " " .$peserta['last_name'];
+        
+        $this->load->view("pages/soal/soal-ielts-002", $jawaban);
     }
 
     // excel
         public function export($file, $id_tes){
             $tes = $this->tes->get_one("tes", ["md5(id_tes)" => $id_tes]);
             $tahun = date('y', strtotime($tes['tgl_tes']));
-            $soal = $this->tes->get_one("soal", ["id_soal" => $tes['id_soal']]);
             
             $spreadsheet = new Spreadsheet;
 
-            if($soal){
-                if($soal['tipe_soal'] == "TOAFL" || $soal['tipe_soal'] == "TOEFL"){
-
-                    if($file == "hasil"){
-                        $semua_peserta = $this->tes->get_all("peserta_toefl", ["id_tes" => $tes['id_tes']]);
-                        $file_data = "Hasil Keseluruhan";
-                    } else if($file == "sertifikat"){
-                        $semua_peserta = $this->tes->get_all("peserta_toefl", ["id_tes" => $tes['id_tes'], "no_doc <> " => ""], "(no_doc + 0)");
-                        $file_data = "Sertifikat";
-                    }
-        
-                    $spreadsheet->setActiveSheetIndex(0)
-                                ->setCellValue('A1', 'LIST PESERTA ' . $tes['nama_tes'])
-                                ->setCellValue('A2', 'No')
-                                ->setCellValue('B2', 'No. Sertifikat')
-                                ->setCellValue('C2', 'Nama')
-                                ->setCellValue('D2', 'TTL')
-                                ->setCellValue('E2', 'Alamat')
-                                ->setCellValue('F2', 'No. WA')
-                                ->setCellValue('G2', 'email')
-                                ->setCellValue('H2', 'Nilai Listening')
-                                ->setCellValue('H3', 'Benar')
-                                ->setCellValue('I3', 'Skor')
-                                ->setCellValue('J2', 'Nilai Structure')
-                                ->setCellValue('J3', 'Benar')
-                                ->setCellValue('K3', 'Skor')
-                                ->setCellValue('L2', 'Nilai Reading')
-                                ->setCellValue('L3', 'Benar')
-                                ->setCellValue('M3', 'Skor')
-                                ->setCellValue('N2', 'SKOR TOEFL');
-    
-                    $spreadsheet->getActiveSheet()->mergeCells('A2:A3')
-                                ->mergeCells('B2:B3')
-                                ->mergeCells('C2:C3')
-                                ->mergeCells('D2:D3')
-                                ->mergeCells('E2:E3')
-                                ->mergeCells('F2:F3')
-                                ->mergeCells('G2:G3')
-                                ->mergeCells('H2:I2')
-                                ->mergeCells('J2:K2')
-                                ->mergeCells('L2:M2')
-                                ->mergeCells('N2:N3')
-                                ->mergeCells('A1:N1');
-                    
-                    $kolom = 4;
-                    $nomor = 1;
-                    foreach($semua_peserta as $peserta) {
-
-                        if($peserta['no_doc'] != "") $no_doc = "{$tahun}/{$peserta['no_doc']}";
-                        else $no_doc = "-";
-
-                            $spreadsheet->setActiveSheetIndex(0)
-                                        ->setCellValue('A' . $kolom, $nomor)
-                                        ->setCellValue('B' . $kolom, $no_doc)
-                                        ->setCellValue('C' . $kolom, $peserta['nama'])
-                                        ->setCellValue('D' . $kolom, $peserta['t4_lahir'] . ", " . tgl_indo($peserta['tgl_lahir']))
-                                        ->setCellValue('E' . $kolom, $peserta['alamat'])
-                                        ->setCellValue('F' . $kolom, $peserta['no_wa'])
-                                        ->setCellValue('G' . $kolom, $peserta['email'])
-                                        ->setCellValue('H' . $kolom, $peserta['nilai_listening'])
-                                        ->setCellValue('I' . $kolom, poin("Listening", $peserta['nilai_listening']))
-                                        ->setCellValue('J' . $kolom, $peserta['nilai_structure'])
-                                        ->setCellValue('K' . $kolom, poin("Structure", $peserta['nilai_structure']))
-                                        ->setCellValue('L' . $kolom, $peserta['nilai_reading'])
-                                        ->setCellValue('M' . $kolom, poin("Reading", $peserta['nilai_reading']))
-                                        ->setCellValue('N' . $kolom, skor($peserta['nilai_listening'], $peserta['nilai_structure'], $peserta['nilai_reading']));
-            
-                            $kolom++;
-                            $nomor++;
-            
-                    }
-
-                    foreach(range('A','N') as $columnID) {
-                        $spreadsheet->getActiveSheet()->getColumnDimension($columnID)
-                            ->setAutoSize(true);
-                    }
-
-                    $writer = new Xlsx($spreadsheet);
-        
-                    header('Content-Type: application/vnd.ms-excel');
-                    header('Content-Disposition: attachment;filename="'.$tes['nama_tes'].' '.$file_data.'.xlsx"');
-                    header('Cache-Control: max-age=0');
-        
-                    $writer->save('php://output');
-                } else {
-                    $semua_peserta = $this->tes->get_all("peserta", ["id_tes" => $tes['id_tes']]);
-                    $spreadsheet->setActiveSheetIndex(0)
-                                ->setCellValue('A1', '<h1>LIST PESERTA ' . $tes['nama_tes'] . '</h1>')
-                                ->setCellValue('A2', 'No')
-                                ->setCellValue('B2', 'Nama Lengkap')
-                                ->setCellValue('C2', 'Email')
-                                ->setCellValue('D2', 'Benar')
-                                ->setCellValue('E2', 'Nilai');
-
-                    $spreadsheet->getActiveSheet()->mergeCells('A1:N1');
-                    
-                    $kolom = 3;
-                    $nomor = 1;
-                    foreach($semua_peserta as $peserta) {
-            
-                            $spreadsheet->setActiveSheetIndex(0)
-                                        ->setCellValue('A' . $kolom, $nomor)
-                                        ->setCellValue('B' . $kolom, $peserta['nama'])
-                                        ->setCellValue('C' . $kolom, $peserta['email'])
-                                        ->setCellValue('D' . $kolom, $peserta['nilai'])
-                                        ->setCellValue('E' . $kolom, skor_latihan($tes['id_tes'], $peserta['nilai']));
-            
-                            $kolom++;
-                            $nomor++;
-            
-                    }
-                    $writer = new Xlsx($spreadsheet);
-        
-                    header('Content-Type: application/vnd.ms-excel');
-                    header('Content-Disposition: attachment;filename="'.$tes['nama_tes'].'.xlsx"');
-                    header('Cache-Control: max-age=0');
-        
-                    $writer->save('php://output');
-                }
+            if($file == "hasil"){
+                $semua_peserta = $this->tes->get_all("peserta_ielts", ["id_tes" => $tes['id_tes']]);
+                $file_data = "Hasil Keseluruhan";
+            } else if($file == "sertifikat"){
+                $semua_peserta = $this->tes->get_all("peserta_ielts", ["id_tes" => $tes['id_tes'], "no_doc <> " => ""], "(no_doc + 0)");
+                $file_data = "Sertifikat";
             }
+
+            $spreadsheet->setActiveSheetIndex(0)
+                        ->setCellValue('A1', 'LIST PESERTA ' . $tes['nama_tes'])
+                        ->setCellValue('A2', 'No')
+                        ->setCellValue('B2', 'No. Sertifikat')
+                        ->setCellValue('C2', 'First Name')
+                        ->setCellValue('D2', 'Last Name')
+                        ->setCellValue('E2', 'Email')
+                        ->setCellValue('F2', 'Benar Listening')
+                        ->setCellValue('G2', 'Nilai Listening')
+                        ->setCellValue('H2', 'Benar Reading')
+                        ->setCellValue('I2', 'Nilai Reading')
+                        ->setCellValue('J2', 'Nilai Writing')
+                        ->setCellValue('K2', 'Nilai Speaking')
+                        ->setCellValue('L2', 'SKOR IELTS')
+                        ->setCellValue('M2', 'Pembulatan SKOR IELTS');
+
+            $spreadsheet->getActiveSheet()
+                        ->mergeCells('A1:M1');
+            
+            $kolom = 3;
+            $nomor = 1;
+            foreach($semua_peserta as $peserta) {
+
+                if($peserta['no_doc'] != "") $no_doc = "{$tahun}/{$peserta['no_doc']}";
+                else $no_doc = "-";
+
+                    $skor_listening = ielts_listening($peserta['nilai_listening']);
+                    $skor_reading = ielts_reading($peserta['nilai_reading']);
+                    $skor_ielts = skor_ielts($skor_listening, $skor_reading, $peserta['nilai_writing'], $peserta['nilai_speaking']);
+                    $pembulatan_skor_ielts = pembulatan_skor_ielts($skor_listening, $skor_reading, $peserta['nilai_writing'], $peserta['nilai_speaking']);
+
+                    $spreadsheet->setActiveSheetIndex(0)
+                                ->setCellValue('A' . $kolom, $nomor)
+                                ->setCellValue('B' . $kolom, $no_doc)
+                                ->setCellValue('C' . $kolom, $peserta['first_name'])
+                                ->setCellValue('D' . $kolom, $peserta['last_name'])
+                                ->setCellValue('E' . $kolom, $peserta['email'])
+                                ->setCellValue('F' . $kolom, $peserta['nilai_listening'])
+                                ->setCellValue('G' . $kolom, $skor_listening)
+                                ->setCellValue('H' . $kolom, $peserta['nilai_reading'])
+                                ->setCellValue('I' . $kolom, $skor_reading)
+                                ->setCellValue('J' . $kolom, $peserta['nilai_writing'])
+                                ->setCellValue('K' . $kolom, $peserta['nilai_speaking'])
+                                ->setCellValue('L' . $kolom, $skor_ielts)
+                                ->setCellValue('M' . $kolom, $pembulatan_skor_ielts);
+    
+                    $kolom++;
+                    $nomor++;
+    
+            }
+
+            foreach(range('A','M') as $columnID) {
+                $spreadsheet->getActiveSheet()->getColumnDimension($columnID)
+                    ->setAutoSize(true);
+            }
+
+            $writer = new Xlsx($spreadsheet);
+
+            header('Content-Type: application/vnd.ms-excel');
+            header('Content-Disposition: attachment;filename="'.$tes['nama_tes'].' '.$file_data.'.xlsx"');
+            header('Cache-Control: max-age=0');
+
+            $writer->save('php://output');
         }
     // excel
     
@@ -220,15 +176,15 @@ class Tes extends MY_Controller {
         echo json_encode($data);
     }
 
-    public function loadHasil($tipe, $id){
+    public function loadHasil($id){
         header('Content-Type: application/json');
-        $output = $this->tes->loadHasil($tipe, $id);
+        $output = $this->tes->loadHasil($id);
         echo $output;
     }
     // load 
     
-    public function get_peserta_toefl(){
-        $data = $this->tes->get_peserta_toefl();
+    public function get_peserta_ielts(){
+        $data = $this->tes->get_peserta_ielts();
         echo json_encode($data);
     }
 
@@ -242,8 +198,8 @@ class Tes extends MY_Controller {
         echo json_encode($data);
     }
 
-    public function edit_peserta_toefl(){
-        $data = $this->tes->edit_peserta_toefl();
+    public function edit_peserta_ielts(){
+        $data = $this->tes->edit_peserta_ielts();
         echo json_encode($data);
     }
 

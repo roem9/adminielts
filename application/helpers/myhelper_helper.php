@@ -301,3 +301,155 @@
 
         return $soal;
     }
+
+    // soal ielts 
+    function soal_isian_ielts($name, $jawaban, $status){
+        if($status == "Benar") {
+            $bg = "#8bcb98";
+        } else {
+            $bg = "#f08080";
+        }
+
+        return '<input type="text" class="ps-2 pe-2 form form-control form-control-flush form-autosize" style="background: '.$bg.' !important;width: 80px;display: inline" name="'.$name.'" value="'.$jawaban.'" readonly>';
+    }
+
+    function soal_pg_ielts($data_soal){
+        if($data_soal['status'] == "Benar") {
+            $bg = "#8bcb98";
+        } else {
+            $bg = "#f08080";
+        }
+
+        return '
+            <div class="mb-4">
+                <div class="mb-3" style="background: '.$bg.' !important;">
+                    '.$data_soal['no'].') '.$data_soal['soal'].'
+                    <input type="hidden" name="'.$data_soal['name'].'">
+                </div>
+                '.pilihan_pg_ielts($data_soal).'
+            </div>
+        ';
+    }
+
+    function pilihan_pg_ielts($data_soal){
+        if($data_soal['status'] == "Benar") {
+            $bg = "#8bcb98";
+        } else {
+            $bg = "#f08080";
+        }
+
+        $data_pilihan = "";
+        foreach ($data_soal['pilihan'] as $pilihan) {
+            if($pilihan == $data_soal['jawaban']){
+                $data_pilihan .= '
+                    <div class="mb-3">
+                        <label>
+                            <input checked type="radio" data-id="'.$data_soal['name'].'" name="radio-'.$data_soal['no'].'" value="'.$pilihan.'" style="background: '.$bg.' !important;"> 
+                            '.$pilihan.'
+                        </label>
+                    </div>
+                ';
+            } else {
+                $data_pilihan .= '
+                    <div class="mb-3">
+                        <label>
+                            <input type="radio" data-id="'.$data_soal['name'].'" name="radio-'.$data_soal['no'].'" value="'.$pilihan.'"> 
+                            '.$pilihan.'
+                        </label>
+                    </div>
+                ';
+            }
+        }
+
+        return $data_pilihan;
+    }
+
+    function ielts_listening($benar){
+        if($benar >= 39 && $benar <= 40){
+            return 9;
+        } else if($benar >= 37 && $benar <= 38){
+            return 8.5;
+        } else if($benar >= 35 && $benar <= 36){
+            return 8;
+        } else if($benar >= 33 && $benar <= 34){
+            return 7.5;
+        } else if($benar >= 30 && $benar <= 32){
+            return 7;
+        } else if($benar >= 27 && $benar <= 29){
+            return 6.5;
+        } else if($benar >= 23 && $benar <= 26){
+            return 6;
+        } else if($benar >= 19 && $benar <= 22){
+            return 5.5;
+        } else if($benar >= 15 && $benar <= 18){
+            return 5;
+        } else if($benar >= 13 && $benar <= 14){
+            return 4.5;
+        } else if($benar >= 10 && $benar <= 12){
+            return 4;
+        } else if($benar >= 8 && $benar <= 9){
+            return 3.5;
+        } else if($benar >= 6 && $benar <= 7){
+            return 3;
+        } else if($benar >= 4 && $benar <= 5){
+            return 2.5;
+        } else {
+            return 0;
+        }
+    }
+
+    function ielts_reading($benar){
+        if($benar == 40){
+            return 9;
+        } else if($benar == 39){
+            return 8.5;
+        } else if($benar >= 37 && $benar <= 38){
+            return 8;
+        } else if($benar == 36){
+            return 7.5;
+        } else if($benar >= 34 && $benar <= 35){
+            return 7;
+        } else if($benar >= 32 && $benar <= 33){
+            return 6.5;
+        } else if($benar >= 30 && $benar <= 31){
+            return 6;
+        } else if($benar >= 27 && $benar <= 29){
+            return 5.5;
+        } else if($benar >= 23 && $benar <= 26){
+            return 5;
+        } else if($benar >= 19 && $benar <= 22){
+            return 4.5;
+        } else if($benar >= 15 && $benar <= 18){
+            return 4;
+        } else if($benar >= 12 && $benar <= 14){
+            return 3.5;
+        } else if($benar >= 9 && $benar <= 11){
+            return 3;
+        } else if($benar >= 6 && $benar <= 8){
+            return 2.5;
+        } else {
+            return 0;
+        }
+    }
+
+    function skor_ielts($nilai_listening, $nilai_reading, $nilai_writing, $nilai_speaking){
+        $skor = ($nilai_listening + $nilai_reading + $nilai_writing + $nilai_speaking) / 4;
+
+        return $skor;
+    }
+
+    function pembulatan_skor_ielts($nilai_listening, $nilai_reading, $nilai_writing, $nilai_speaking){
+        $skor = ($nilai_listening + $nilai_reading + $nilai_writing + $nilai_speaking) / 4;
+
+        $whole = intval($skor); // 1234
+        $decimal1 = $skor - $whole; // 0.44000000000005 uh oh! that's why it needs... (see next line)
+        $decimal2 = round($decimal1, 2); // 0.44 this will round off the excess numbers
+        $decimal = substr($decimal2, 2);
+
+        if($decimal < 25) return $whole ;
+        else if($decimal >= 25 && $decimal < 50) return $whole + 0.5;
+        else if($decimal >= 50 && $decimal <= 100) return $whole + 1;
+        else return $whole;
+    }
+
+// soal ielts 

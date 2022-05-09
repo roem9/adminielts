@@ -17,10 +17,10 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 # add
 /application/config/
-/assets/logo/
-/assets/myaudio/
-/assets/img/logo.png
-/assets/qrcode/
+# /assets/logo/
+# /assets/myaudio/
+# /assets/img/logo.png
+# /assets/qrcode/
 
 # IDE Files
 #-------------------------

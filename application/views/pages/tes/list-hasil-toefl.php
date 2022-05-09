@@ -41,11 +41,11 @@
                                 <thead>
                                     <tr>
                                         <th class="text-dark desktop mobile-l mobile-p tablet-l tablet-p" style="font-size: 11px">Nama Peserta</th>
-                                        <th class="text-dark desktop w-1" style="font-size: 11px">Sertifikat</th>
+                                        <th class="text-dark desktop" style="font-size: 11px">Email</th>
                                         <th class="text-dark desktop w-1" style="font-size: 11px">L</th>
-                                        <th class="text-dark desktop w-1" style="font-size: 11px">S</th>
                                         <th class="text-dark desktop w-1" style="font-size: 11px">R</th>
-                                        <th class="text-dark desktop w-1" style="font-size: 11px">Skor</th>
+                                        <th class="text-dark desktop w-1" style="font-size: 11px">W</th>
+                                        <th class="text-dark desktop w-1" style="font-size: 11px">S</th>
                                         <th class="text-dark desktop w-1" style="font-size: 11px">Menu</th>
                                     </tr>
                                 </thead>
@@ -67,10 +67,6 @@
             }
         endif;
     ?>
-
-    <script>
-        let tipe = "<?= $tipe?>";
-    </script>
 
     <!-- load javascript -->
     <?php  
