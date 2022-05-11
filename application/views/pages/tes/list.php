@@ -44,8 +44,7 @@
                                         <th class="text-dark desktop w-1" style="font-size: 11px">Peserta</th>
                                         <th class="text-dark desktop w-1" style="font-size: 11px">Status</th>
                                         <th class="text-dark desktop w-1" style="font-size: 11px">Menu</th>
-                                        <th class="text-dark none" style="font-size: 11px">Link Listening & Reading</th>
-                                        <th class="text-dark none" style="font-size: 11px">Link Writing</th>
+                                        <th class="text-dark none" style="font-size: 11px">Link Test</th>
                                         <th class="text-dark none" style="font-size: 11px">Catatan</th>
                                     </tr>
                                 </thead>

@@ -41,7 +41,6 @@ var datatable = $('#dataTable').DataTable({
             else return "<center>"+data+"</center>"
         }},
         {"data": "link_listening_reading", "className": "none text-wrap"},
-        {"data": "link_writing", "className": "none text-wrap"},
         {"data": "catatan", "className": "none text-wrap"},
     ],
     order: [[0, 'desc']],
