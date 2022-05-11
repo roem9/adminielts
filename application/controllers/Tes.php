@@ -119,7 +119,7 @@ class Tes extends MY_Controller {
                 else $no_doc = "-";
 
                     $skor_listening = ielts_listening($peserta['nilai_listening']);
-                    $skor_reading = ielts_reading($peserta['nilai_reading']);
+                    $skor_reading = ielts_reading($peserta['nilai_reading'], $tes['tipe_tes']);
                     $skor_ielts = skor_ielts($skor_listening, $skor_reading, $peserta['nilai_writing'], $peserta['nilai_speaking']);
                     $pembulatan_skor_ielts = pembulatan_skor_ielts($skor_listening, $skor_reading, $peserta['nilai_writing'], $peserta['nilai_speaking']);
 

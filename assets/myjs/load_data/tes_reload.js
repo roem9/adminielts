@@ -16,6 +16,7 @@ var datatable = $('#dataTable').DataTable({
     columns: [
         {"data": "nama_tes"},
         {"data": "tgl_tes"},
+        {"data": "tipe_tes"},
         {"data": "tipe_soal"},
         {"data": "peserta", render : function (data) {
             if(jQuery.browser.mobile == true) return data

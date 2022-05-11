@@ -7,7 +7,7 @@ class Tes_model extends MY_Model {
     public function loadTes(){
         $config = $this->config();
 
-        $this->datatables->select("id_tes, tgl_tes, tgl_pengumuman, nama_tes, status, catatan, password, tipe_soal,
+        $this->datatables->select("id_tes, tgl_tes, tgl_pengumuman, nama_tes, status, catatan, password, tipe_soal, tipe_tes,
             (select count(id) from peserta_ielts where id_tes = id_tes) as peserta_ielts
         ");
         $this->datatables->from("tes");

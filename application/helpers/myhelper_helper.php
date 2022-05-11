@@ -371,23 +371,23 @@
             return 8.5;
         } else if($benar >= 35 && $benar <= 36){
             return 8;
-        } else if($benar >= 33 && $benar <= 34){
+        } else if($benar >= 32 && $benar <= 34){
             return 7.5;
-        } else if($benar >= 30 && $benar <= 32){
+        } else if($benar >= 30 && $benar <= 31){
             return 7;
-        } else if($benar >= 27 && $benar <= 29){
+        } else if($benar >= 26 && $benar <= 29){
             return 6.5;
-        } else if($benar >= 23 && $benar <= 26){
+        } else if($benar >= 23 && $benar <= 25){
             return 6;
-        } else if($benar >= 19 && $benar <= 22){
+        } else if($benar >= 18 && $benar <= 22){
             return 5.5;
-        } else if($benar >= 15 && $benar <= 18){
+        } else if($benar >= 16 && $benar <= 17){
             return 5;
-        } else if($benar >= 13 && $benar <= 14){
+        } else if($benar >= 13 && $benar <= 15){
             return 4.5;
-        } else if($benar >= 10 && $benar <= 12){
+        } else if($benar >= 11 && $benar <= 12){
             return 4;
-        } else if($benar >= 8 && $benar <= 9){
+        } else if($benar >= 8 && $benar <= 10){
             return 3.5;
         } else if($benar >= 6 && $benar <= 7){
             return 3;
@@ -398,37 +398,75 @@
         }
     }
 
-    function ielts_reading($benar){
-        if($benar == 40){
-            return 9;
-        } else if($benar == 39){
-            return 8.5;
-        } else if($benar >= 37 && $benar <= 38){
-            return 8;
-        } else if($benar == 36){
-            return 7.5;
-        } else if($benar >= 34 && $benar <= 35){
-            return 7;
-        } else if($benar >= 32 && $benar <= 33){
-            return 6.5;
-        } else if($benar >= 30 && $benar <= 31){
-            return 6;
-        } else if($benar >= 27 && $benar <= 29){
-            return 5.5;
-        } else if($benar >= 23 && $benar <= 26){
-            return 5;
-        } else if($benar >= 19 && $benar <= 22){
-            return 4.5;
-        } else if($benar >= 15 && $benar <= 18){
-            return 4;
-        } else if($benar >= 12 && $benar <= 14){
-            return 3.5;
-        } else if($benar >= 9 && $benar <= 11){
-            return 3;
-        } else if($benar >= 6 && $benar <= 8){
-            return 2.5;
-        } else {
-            return 0;
+    function ielts_reading($benar, $tipe_tes){
+        if($tipe_tes == "IELTS Academic"){
+            if($benar >= 39 && $benar <= 40){
+                return 9;
+            } else if($benar >= 37 && $benar <= 38){
+                return 8.5;
+            } else if($benar >= 35 && $benar <= 36){
+                return 8;
+            } else if($benar >= 33 && $benar <= 34){
+                return 7.5;
+            } else if($benar >= 30 && $benar <= 32){
+                return 7;
+            } else if($benar >= 27 && $benar <= 29){
+                return 6.5;
+            } else if($benar >= 23 && $benar <= 26){
+                return 6;
+            } else if($benar >= 19 && $benar <= 22){
+                return 5.5;
+            } else if($benar >= 15 && $benar <= 18){
+                return 5;
+            } else if($benar >= 13 && $benar <= 14){
+                return 4.5;
+            } else if($benar >= 10 && $benar <= 12){
+                return 4;
+            } else if($benar >= 8 && $benar <= 9){
+                return 3.5;
+            } else if($benar >= 6 && $benar <= 7){
+                return 3;
+            } else if($benar >= 4 && $benar <= 5){
+                return 2.5;
+            } else if($benar >= 2 && $benar <= 3){
+                return 2;
+            } else {
+                return 1;
+            }
+        } else if($tipe_tes == "General Training"){
+            if($benar == 40){
+                return 9;
+            } else if($benar == 39){
+                return 8.5;
+            } else if($benar >= 37 && $benar <= 38){
+                return 8;
+            } else if($benar == 36){
+                return 7.5;
+            } else if($benar >= 34 && $benar <= 35){
+                return 7;
+            } else if($benar >= 32 && $benar <= 33){
+                return 6.5;
+            } else if($benar >= 30 && $benar <= 31){
+                return 6;
+            } else if($benar >= 27 && $benar <= 29){
+                return 5.5;
+            } else if($benar >= 23 && $benar <= 26){
+                return 5;
+            } else if($benar >= 19 && $benar <= 22){
+                return 4.5;
+            } else if($benar >= 15 && $benar <= 18){
+                return 4;
+            } else if($benar >= 12 && $benar <= 14){
+                return 3.5;
+            } else if($benar >= 9 && $benar <= 11){
+                return 3;
+            } else if($benar >= 6 && $benar <= 8){
+                return 2.5;
+            } else if($benar >= 3 && $benar <= 5){
+                return 2;
+            } else {
+                return 0;
+            }
         }
     }
 
