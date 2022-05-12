@@ -61,6 +61,7 @@ class Tes extends MY_Controller {
 
     public function jawaban($id){
         $peserta = $this->tes->get_one("peserta_ielts", ["md5(id)" => $id]);
+        $tes = $this->tes->get_one("tes", ["id_tes" => $peserta['id_tes']]);
 
         $data = explode("|||", $peserta['text_listening_reading']);
 
@@ -74,7 +75,11 @@ class Tes extends MY_Controller {
 
         $jawaban['title'] = "Jawaban " . $peserta['first_name'] . " " .$peserta['last_name'];
         
-        $this->load->view("pages/soal/soal-ielts-002", $jawaban);
+        if($tes['tipe_soal'] == "Soal_002"){
+            $this->load->view("pages/soal/soal-ielts-002", $jawaban);
+        } else if($tes['tipe_soal'] == "Soal_GT_002"){
+            $this->load->view("pages/soal/soal-ielts-gt-002", $jawaban);
+        }
     }
 
     // excel

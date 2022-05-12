@@ -31,6 +31,7 @@
                         <select name="tipe_soal" id="id_soal_add" class="form form-control required">
                             <option value="">Pilih Soal</option>
                             <option value="Soal_002">Soal_002</option>
+                            <option value="Soal_GT_002">Soal_GT_002</option>
                         </select>
                         <label for="id_soal_add">Soal</label>
                     </div>
@@ -112,6 +113,7 @@
                     <select name="tipe_soal" id="tipe_soal_edit" class="form form-control required">
                         <option value="">Pilih Soal</option>
                         <option value="Soal_002">Soal_002</option>
+                        <option value="Soal_GT_002">Soal_GT_002</option>
                     </select>
                     <label for="id_soal_edit">Soal</label>
                 </div>
