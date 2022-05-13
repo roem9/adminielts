@@ -64,7 +64,7 @@
                             Email       : $email<br><br>
                             Berikut Ini Hasil Ujian Anda :<br>
                             Benar Listening : $benar_listening<br>
-                            Benar Reading : $benar_structure<br>
+                            Benar Reading : $benar_reading<br>
                         </small>
                     </div>
 
@@ -146,7 +146,7 @@
                         Email       : $email<br><br>
                         Berikut Ini Hasil Ujian Anda :<br>
                         Benar Listening : $benar_listening<br>
-                        Benar Reading : $benar_structure<br>
+                        Benar Reading : $benar_reading<br>
                     </small>
                 </div>
             </div>

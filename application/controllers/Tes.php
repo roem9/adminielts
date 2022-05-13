@@ -75,6 +75,8 @@ class Tes extends MY_Controller {
 
         $jawaban['title'] = "Jawaban " . $peserta['first_name'] . " " .$peserta['last_name'];
         
+        // var_dump($jawaban['listening_reading']);
+
         if($tes['tipe_soal'] == "Soal_002"){
             $this->load->view("pages/soal/soal-ielts-002", $jawaban);
         } else if($tes['tipe_soal'] == "Soal_GT_002"){
