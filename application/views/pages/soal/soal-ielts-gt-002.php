@@ -360,10 +360,6 @@
                                         <p>40. In general, your aim is to leave the site <?= soal_isian_ielts("jawaban_listening[39]", $listening_reading[39][1], $listening_reading[39][2])?></p>
                                     </div>
                                 </div>
-
-                                <div class="d-flex justify-content-end">
-                                    <a href="javascript:void(0)" class="btn btn-success btnTransisiDua">Next<?= tablerIcon("arrow-narrow-right", "me-0")?></a>
-                                </div>
                             </div>
 
                             <div class="sesi-reading" style="display:nones">
@@ -865,13 +861,9 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="d-flex justify-content-end">
-                                    <a href="javascript:void(0)" class="btn btn-success btnTransisiTiga">Next<?= tablerIcon("arrow-narrow-right", "me-0")?></a>
-                                </div>
                             </div>
 
-                            <div class="sesi-writing" style="display:none">
+                            <div class="sesi-writing" style="display:nones">
                                 <div class="card mb-3">
                                     <div class="card-body">
                                         <p class="question mb-3">
