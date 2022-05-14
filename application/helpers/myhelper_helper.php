@@ -248,9 +248,14 @@
     }
 
     // jumlah peserta 
-    function peserta($peserta_latihan, $peserta_toefl){
-        if($peserta_latihan > $peserta_toefl) return $peserta_latihan;
-        else return $peserta_toefl;
+    function peserta_ielts($id_tes){
+        $CI =& get_instance();
+
+        $CI->db->from("peserta_ielts");
+        $CI->db->where(["id_tes" => $id_tes]);
+        $data = $CI->db->get()->result_array();
+
+        return count($data);
     }
 
     // poin setiap sesi toefl 

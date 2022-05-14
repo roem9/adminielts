@@ -7,13 +7,12 @@ class Tes_model extends MY_Model {
     public function loadTes(){
         $config = $this->config();
 
-        $this->datatables->select("id_tes, tgl_tes, tgl_pengumuman, nama_tes, status, catatan, password, tipe_soal, tipe_tes,
-            (select count(id) from peserta_ielts where id_tes = id_tes) as peserta_ielts
+        $this->datatables->select("id_tes, tgl_tes, tgl_pengumuman, nama_tes, status, catatan, password, tipe_soal, tipe_tes
         ");
         $this->datatables->from("tes");
         $this->datatables->where("hapus", 0);
 
-        $this->datatables->add_column("peserta", '$1', 'peserta_ielts');
+        $this->datatables->add_column("peserta", '$1', 'peserta_ielts(id_tes)');
         $this->datatables->add_column('action','
                 <span class="dropdown">
                     <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
