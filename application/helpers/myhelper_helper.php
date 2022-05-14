@@ -349,7 +349,7 @@
                 $data_pilihan .= '
                     <div class="mb-3">
                         <label>
-                            <input checked type="radio" data-id="'.$data_soal['name'].'" name="radio-'.$data_soal['no'].'" value="'.$pilihan.'" style="background: '.$bg.' !important;"> 
+                            <input disabled checked type="radio" data-id="'.$data_soal['name'].'" name="radio-'.$data_soal['no'].'" value="'.$pilihan.'" style="background: '.$bg.' !important;"> 
                             '.$pilihan.'
                         </label>
                     </div>
@@ -358,7 +358,7 @@
                 $data_pilihan .= '
                     <div class="mb-3">
                         <label>
-                            <input type="radio" data-id="'.$data_soal['name'].'" name="radio-'.$data_soal['no'].'" value="'.$pilihan.'"> 
+                            <input disabled type="radio" data-id="'.$data_soal['name'].'" name="radio-'.$data_soal['no'].'" value="'.$pilihan.'"> 
                             '.$pilihan.'
                         </label>
                     </div>
