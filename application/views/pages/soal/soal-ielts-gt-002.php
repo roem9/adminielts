@@ -878,7 +878,7 @@
                                         <p>Dear _______,</p>
 
                                         <span>Type your answer here</span>
-                                        <textarea class="form-control mb-3" name="text_writing[0]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"></textarea>
+                                        <textarea class="form-control mb-3" name="text_writing[0]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"><?= $writing[0]?></textarea>
                                     </div>
                                 </div>
 
@@ -895,7 +895,7 @@
                                         <p>You should write at least 250 words.</p>
 
                                         <span>Type your answer here</span>
-                                        <textarea class="form-control mb-3" name="text_writing[1]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"></textarea>
+                                        <textarea class="form-control mb-3" name="text_writing[1]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"><?= $writing[1]?></textarea>
                                     </div>
                                 </div>
 
