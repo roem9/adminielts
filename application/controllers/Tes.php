@@ -81,6 +81,8 @@ class Tes extends MY_Controller {
             $this->load->view("pages/soal/soal-ielts-002", $jawaban);
         } else if($tes['tipe_soal'] == "Soal_GT_002"){
             $this->load->view("pages/soal/soal-ielts-gt-002", $jawaban);
+        } else if($tes['tipe_soal'] == "Soal_GT_003"){
+            $this->load->view("pages/soal/soal-ielts-gt-003", $jawaban);
         }
     }
 

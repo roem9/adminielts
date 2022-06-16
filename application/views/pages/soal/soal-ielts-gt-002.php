@@ -879,6 +879,7 @@
 
                                         <span>Type your answer here</span>
                                         <textarea class="form-control mb-3" name="text_writing[0]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"><?= $writing[0]?></textarea>
+                                        <p><?= str_word_count($writing[0])?> words</p>
                                     </div>
                                 </div>
 
@@ -896,6 +897,7 @@
 
                                         <span>Type your answer here</span>
                                         <textarea class="form-control mb-3" name="text_writing[1]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"><?= $writing[1]?></textarea>
+                                        <p><?= str_word_count($writing[1])?> words</p>
                                     </div>
                                 </div>
 
