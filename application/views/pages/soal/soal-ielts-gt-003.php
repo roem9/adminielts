@@ -173,9 +173,9 @@
                                                     "no" => 21, 
                                                     "soal" => "Dave Hadley says that the computer system has",
                                                     "pilihan" => [
-                                                        "A too many users.",
-                                                        "B never worked well.",
-                                                        "C become outdated.",
+                                                        "<b>A.</b> too many users.",
+                                                        "<b>B.</b> never worked well.",
+                                                        "<b>C.</b> become outdated.",
                                                     ],
                                                     "name" => "jawaban_listening[20]",
                                                     "jawaban" => $listening_reading[20][1],
@@ -185,9 +185,9 @@
                                                     "no" => 22, 
                                                     "soal" => "The main problem with the computer system is that it",
                                                     "pilihan" => [
-                                                        "A is too slow",
-                                                        "B stops working",
-                                                        "C displays incorrect data",
+                                                        "<b>A.</b> is too slow",
+                                                        "<b>B.</b> stops working",
+                                                        "<b>C.</b> displays incorrect data",
                                                     ],
                                                     "name" => "jawaban_listening[21]",
                                                     "jawaban" => $listening_reading[21][1],
@@ -197,9 +197,9 @@
                                                     "no" => 23, 
                                                     "soal" => "Timetabling has become an issue because",
                                                     "pilihan" => [
-                                                        "A there is not enough time for anyone to do it.",
-                                                        "B the system does not handle course options.",
-                                                        "C the courses are constantly changing.",
+                                                        "<b>A.</b> there is not enough time for anyone to do it.",
+                                                        "<b>B.</b> the system does not handle course options.",
+                                                        "<b>C.</b> the courses are constantly changing.",
                                                     ],
                                                     "name" => "jawaban_listening[22]",
                                                     "jawaban" => $listening_reading[22][1],
@@ -209,9 +209,9 @@
                                                     "no" => 24, 
                                                     "soal" => "To solve the timetabling issues, Randhir suggests that",
                                                     "pilihan" => [
-                                                        "A students should create their own timetables",
-                                                        "B Dave should have someone to assist him.",
-                                                        "C. the number of courses should be reduced.",
+                                                        "<b>A.</b> students should create their own timetables",
+                                                        "<b>B.</b> Dave should have someone to assist him.",
+                                                        "<b>C.</b> the number of courses should be reduced.",
                                                     ],
                                                     "name" => "jawaban_listening[23]",
                                                     "jawaban" => $listening_reading[23][1],
@@ -221,9 +221,9 @@
                                                     "no" => 25, 
                                                     "soal" => "Randhir says that a new system may",
                                                     "pilihan" => [
-                                                        "A need to be trialed.",
-                                                        "B still to be trialed",
-                                                        "C be more economical",
+                                                        "<b>A.</b> need to be trialed.",
+                                                        "<b>B.</b> still to be trialed",
+                                                        "<b>C.</b> be more economical",
                                                     ],
                                                     "name" => "jawaban_listening[24]",
                                                     "jawaban" => $listening_reading[24][1],
@@ -233,9 +233,9 @@
                                                     "no" => 26, 
                                                     "soal" => "Improving the existing system will take",
                                                     "pilihan" => [
-                                                        "A a few weeks.",
-                                                        "B four or five months.",
-                                                        "C nine months ",
+                                                        "<b>A.</b> a few weeks.",
+                                                        "<b>B.</b> four or five months.",
+                                                        "<b>C.</b> nine months ",
                                                     ],
                                                     "name" => "jawaban_listening[25]",
                                                     "jawaban" => $listening_reading[25][1],
@@ -255,16 +255,16 @@
                                     <div class="card-body ps-4">
                                         <p class="question">
                                             Questions 27-30<br>
-                                            Complete the flow-chart below.<br>
+                                            Complete the flowchart below.<br>
                                             Write NO MORE THAN TWO WORDS for each answer.<br>
                                         </p>
                                         
                                         <center>
                                             <table class="table" style="width:500px">
-                                                    <tr>
-                                                        <td>
-                                                            <p><b>Next steps</b></p>
-                                                            <p>Get approval from 27<?= soal_isian_ielts("jawaban_listening[26]", $listening_reading[26][1], $listening_reading[26][2])?></p>
+                                                <tr>
+                                                    <td style="text-align:center">
+                                                        <p><b>Next steps</b></p>
+                                                        <p>Get approval from 27<?= soal_isian_ielts("jawaban_listening[26]", $listening_reading[26][1], $listening_reading[26][2])?></p>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -275,7 +275,7 @@
                                         <center>
                                             <table class="table" style="width:500px">
                                                 <tr>
-                                                    <td>Complete a 28<?= soal_isian_ielts("jawaban_listening[27]", $listening_reading[27][1], $listening_reading[27][2])?> form</td>
+                                                    <td style="text-align:center">Complete a 28<?= soal_isian_ielts("jawaban_listening[27]", $listening_reading[27][1], $listening_reading[27][2])?> form</td>
                                                 </tr>
                                             </table>
                                         </center>
@@ -285,7 +285,7 @@
                                         <center>
                                             <table class="table" style="width:500px">
                                                 <tr>
-                                                    <td>Book a 29<?= soal_isian_ielts("jawaban_listening[28]", $listening_reading[28][1], $listening_reading[28][2])?> with the systems analyst</td>
+                                                    <td style="text-align:center">Book a 29<?= soal_isian_ielts("jawaban_listening[28]", $listening_reading[28][1], $listening_reading[28][2])?> with the systems analyst</td>
                                                 </tr>
                                             </table>
                                         </center>
@@ -295,7 +295,7 @@
                                         <center>
                                             <table class="table" style="width:500px">
                                                 <tr>
-                                                    <td>Set up a 30<?= soal_isian_ielts("jawaban_listening[29]", $listening_reading[29][1], $listening_reading[29][2])?>with technologies team</td>
+                                                    <td style="text-align:center">Set up a 30<?= soal_isian_ielts("jawaban_listening[29]", $listening_reading[29][1], $listening_reading[29][2])?>with technologies team</td>
                                                 </tr>
                                             </table>
                                         </center>
@@ -306,8 +306,8 @@
                                 <div class="shadow card mb-3">
                                     <div class="card-body ps-4">
                                         <p class="question">
-                                            SECTION 4 | Questions 31-40
-                                            Complete the sentences below.
+                                            SECTION 4 | Questions 31-40<br>
+                                            Complete the sentences below.<br>
                                             Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
                                         </p>
 
@@ -522,20 +522,6 @@
                                             READING PASSAGE 3 | (Question 15-21)<br>
                                             You should spend about 20 minutes on Questions 15-21 which are based on Reading Passage 3 below. <br>
                                         </p>
-                                        <table class="table">
-                                            <tr>
-                                                <td><b>TRUE</b></td>
-                                                <td>if the statement agrees with the information</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>FALSE</b></td>
-                                                <td>if the statement contradicts the information</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>NOT GIVEN</b></td>
-                                                <td>if there is no information on this</td>
-                                            </tr>
-                                        </table>
 
                                         <div class="row">
                                             <div class="col-7">
@@ -724,10 +710,10 @@
                                                                     "no" => 28,
                                                                     "soal" => "What is the main problem faced by cattle farmers in Ethiopia, according to Professor Wood?",
                                                                     "pilihan" => [
-                                                                        "A. TB is being transmitted from people to cattle.",
-                                                                        "B. New breeds of cattle have led to an increase in TB.",
-                                                                        "C. The traditional breeds of cattle are being affected by TB.",
-                                                                        "D. TB has spread into places where it was previously unknown.",
+                                                                        "<b>A.</b> TB is being transmitted from people to cattle.",
+                                                                        "<b>B.</b> New breeds of cattle have led to an increase in TB.",
+                                                                        "<b>C.</b> The traditional breeds of cattle are being affected by TB.",
+                                                                        "<b>D.</b> TB has spread into places where it was previously unknown.",
                                                                     ],
                                                                     "name" => "jawaban_reading[27]",
                                                                     "jawaban" => $listening_reading[67][1],
@@ -737,10 +723,10 @@
                                                                     "no" => 29,
                                                                     "soal" => "When discussing the cultivation of cabbages in Ghana, the writer says that this crop",
                                                                     "pilihan" => [
-                                                                        "A was introduced from outside Africa.",
-                                                                        "B is not eaten much by local people.",
-                                                                        "C is not grown correctly by many farmers.",
-                                                                        "D requires the use of fertiliser and special equipment.",
+                                                                        "<b>A.</b> was introduced from outside Africa.",
+                                                                        "<b>B.</b> is not eaten much by local people.",
+                                                                        "<b>C.</b> is not grown correctly by many farmers.",
+                                                                        "<b>D.</b> requires the use of fertiliser and special equipment.",
                                                                     ],
                                                                     "name" => "jawaban_reading[28]",
                                                                     "jawaban" => $listening_reading[68][1],
@@ -750,10 +736,10 @@
                                                                     "no" => 30,
                                                                     "soal" => "Fening believed that the new disease destroying cabbages was",
                                                                     "pilihan" => [
-                                                                        "A. caused by overuse of pesticides.",
-                                                                        "B. also affecting other locally grown vegetables.",
-                                                                        "C. linked to insect attacks on these vegetables.",
-                                                                        "D. connected with the development of new insect breeds.",
+                                                                        "<b>A.</b> caused by overuse of pesticides.",
+                                                                        "<b>B.</b> also affecting other locally grown vegetables.",
+                                                                        "<b>C.</b> linked to insect attacks on these vegetables.",
+                                                                        "<b>D.</b> connected with the development of new insect breeds.",
                                                                     ],
                                                                     "name" => "jawaban_reading[29]",
                                                                     "jawaban" => $listening_reading[69][1],
@@ -763,10 +749,10 @@
                                                                     "no" => 31,
                                                                     "soal" => "Fening first suspected that the cabbage disease was caused by a virus because",
                                                                     "pilihan" => [
-                                                                        "A. evidence of viral disease could be seen on the cabbage leaves.",
-                                                                        "B. pink and green aphids did not commonly attack cabbages.",
-                                                                        "C. viral diseases affecting vegetables had occurred elsewhere in Africa.",
-                                                                        "D. aphids would not have caused so much damage to the crops.",
+                                                                        "<b>A.</b> evidence of viral disease could be seen on the cabbage leaves.",
+                                                                        "<b>B.</b> pink and green aphids did not commonly attack cabbages.",
+                                                                        "<b>C.</b> viral diseases affecting vegetables had occurred elsewhere in Africa.",
+                                                                        "<b>D.</b> aphids would not have caused so much damage to the crops.",
                                                                     ],
                                                                     "name" => "jawaban_reading[30]",
                                                                     "jawaban" => $listening_reading[70][1],
@@ -776,10 +762,10 @@
                                                                     "no" => 32,
                                                                     "soal" => "When doing further research in Cambridge, Fening and Carr discovered that",
                                                                     "pilihan" => [
-                                                                        "A. the virus was unfamiliar to them.",
-                                                                        "B. two different viruses were present.",
-                                                                        "C. the aphids’ DNA was more complex than expected.",
-                                                                        "D. one aphid was more harmful than the other.",
+                                                                        "<b>A.</b> the virus was unfamiliar to them.",
+                                                                        "<b>B.</b> two different viruses were present.",
+                                                                        "<b>C.</b> the aphids’ DNA was more complex than expected.",
+                                                                        "<b>D.</b> one aphid was more harmful than the other.",
                                                                     ],
                                                                     "name" => "jawaban_reading[31]",
                                                                     "jawaban" => $listening_reading[71][1],
