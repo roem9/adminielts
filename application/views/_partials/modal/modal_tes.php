@@ -32,6 +32,7 @@
                             <option value="">Pilih Soal</option>
                             <option value="Soal_002">Soal_002</option>
                             <option value="Soal_GT_002">Soal_GT_002</option>
+                            <option value="Soal_003">Soal_003</option>
                             <option value="Soal_GT_003">Soal_GT_003</option>
                         </select>
                         <label for="id_soal_add">Soal</label>
@@ -115,6 +116,7 @@
                         <option value="">Pilih Soal</option>
                         <option value="Soal_002">Soal_002</option>
                         <option value="Soal_GT_002">Soal_GT_002</option>
+                        <option value="Soal_003">Soal_003</option>
                         <option value="Soal_GT_003">Soal_GT_003</option>
                     </select>
                     <label for="id_soal_edit">Soal</label>
