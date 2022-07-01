@@ -127,7 +127,11 @@
                                                 [
                                                     "no" => 11,
                                                     "soal" => "PS Camping has been organizing holidays for",
-                                                    "pilihan" => ["A. 15 years.", "B. 20 years.", "C. 25 years."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> 15 years.",
+                                                        "<b>B.</b> 20 years.",
+                                                        "<b>C.</b> 25 years."
+                                                    ],
                                                     "name" => "jawaban_listening[10]",
                                                     "jawaban" => $listening_reading[10][1],
                                                     "status" => $listening_reading[10][2],
@@ -135,7 +139,11 @@
                                                 [
                                                     "no" => 12,
                                                     "soal" => "The company has most camping sites in",
-                                                    "pilihan" => ["A. France.", "B. Italy.", "C. Switzerland."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> France.",
+                                                        "<b>B.</b> Italy.",
+                                                        "<b>C.</b> Switzerland."
+                                                    ],
                                                     "name" => "jawaban_listening[11]",
                                                     "jawaban" => $listening_reading[11][1],
                                                     "status" => $listening_reading[11][2],
@@ -143,7 +151,11 @@
                                                 [
                                                     "no" => 13,
                                                     "soal" => "Which organized activity can children do every day of the week?",
-                                                    "pilihan" => ["A. football", "B. drama", "C. model making"],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> football",
+                                                        "<b>B.</b> drama",
+                                                        "<b>C.</b> model making"
+                                                    ],
                                                     "name" => "jawaban_listening[12]",
                                                     "jawaban" => $listening_reading[12][1],
                                                     "status" => $listening_reading[12][2],
@@ -151,7 +163,11 @@
                                                 [
                                                     "no" => 14,
                                                     "soal" => "Some areas of the sites have a ‘no noise’ rule after",
-                                                    "pilihan" => ["A. 9.30 p.m.", "B. 10.00 p.m.", "C. 10.30 p.m."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> 9.30 p.m.",
+                                                        "<b>B.</b> 10.00 p.m.",
+                                                        "<b>C.</b> 10.30 p.m."
+                                                    ],
                                                     "name" => "jawaban_listening[13]",
                                                     "jawaban" => $listening_reading[13][1],
                                                     "status" => $listening_reading[13][2],
@@ -159,7 +175,11 @@
                                                 [
                                                     "no" => 15,
                                                     "soal" => "The holiday insurance that is offered by PS Camping",
-                                                    "pilihan" => ["A. can be charged on an annual basis.", "B. is included in the price of the holiday.", "C. must be taken out at the time of booking."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> can be charged on an annual basis.",
+                                                        "<b>B.</b> is included in the price of the holiday.",
+                                                        "<b>C.</b> must be taken out at the time of booking."
+                                                    ],
                                                     "name" => "jawaban_listening[14]",
                                                     "jawaban" => $listening_reading[14][1],
                                                     "status" => $listening_reading[14][2],
@@ -167,7 +187,11 @@
                                                 [
                                                     "no" => 16,
                                                     "soal" => "Customers who recommend PS Camping to friends will receive",
-                                                    "pilihan" => ["A. a free gift.", "B. an upgrade to a luxury tent.", "C. a discount."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> a free gift.",
+                                                        "<b>B.</b> an upgrade to a luxury tent.",
+                                                        "<b>C.</b> a discount."
+                                                    ],
                                                     "name" => "jawaban_listening[15]",
                                                     "jawaban" => $listening_reading[15][1],
                                                     "status" => $listening_reading[15][2],
@@ -255,7 +279,11 @@
                                                 [ 
                                                     "no" => 24, 
                                                     "soal" => "Janice thinks that employers should encourage workers who are",
-                                                    "pilihan" => ["A. potential leaders.", "B. open to new ideas.","C. good at teamwork."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> potential leaders.",
+                                                        "<b>B.</b> open to new ideas.",
+                                                        "<b>C.</b> good at teamwork."
+                                                    ],
                                                     "name" => "soal_listening[23]",
                                                     "jawaban" => $listening_reading[23][1],
                                                     "status" => $listening_reading[23][2],
@@ -263,7 +291,11 @@
                                                 [ 
                                                     "no" => 25, 
                                                     "soal" => "Janice suggests that managers may find it difficult to",
-                                                    "pilihan" => ["A. form successful groups.", "B. balance conflicting needs.","C. deal with uncooperative workers."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> form successful groups.",
+                                                        "<b>B.</b> balance conflicting needs.",
+                                                        "<b>C.</b> deal with uncooperative workers."
+                                                    ],
                                                     "name" => "soal_listening[24]",
                                                     "jawaban" => $listening_reading[24][1],
                                                     "status" => $listening_reading[24][2],
@@ -271,7 +303,11 @@
                                                 [ 
                                                     "no" => 26, 
                                                     "soal" => "Janice believes employers should look for job applicants who",
-                                                    "pilihan" => ["A. can think independently.", "B. will obey the system.","C. can solve problems."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> can think independently.",
+                                                        "<b>B.</b> will obey the system.",
+                                                        "<b>C.</b> can solve problems."
+                                                    ],
                                                     "name" => "soal_listening[25]",
                                                     "jawaban" => $listening_reading[25][1],
                                                     "status" => $listening_reading[25][2],
@@ -279,7 +315,11 @@
                                                 [ 
                                                     "no" => 27, 
                                                     "soal" => "Janice believes managers should",
-                                                    "pilihan" => ["A. demonstrate good behaviour.", "B. encourage co-operation early on.","C. increase financial incentives."],
+                                                    "pilihan" => [
+                                                        "<b>A.</b> demonstrate good behaviour.",
+                                                        "<b>B.</b> encourage co-operation early on.",
+                                                        "<b>C.</b> increase financial incentives."
+                                                    ],
                                                     "name" => "soal_listening[26]",
                                                     "jawaban" => $listening_reading[26][1],
                                                     "status" => $listening_reading[26][2],
@@ -531,7 +571,11 @@
                                                                 [
                                                                     "no" => 16,
                                                                     "soal" => "The University Residential Colleges provide",
-                                                                    "pilihan" => ["A. a place to live and regular classes", "B. regular classes only", "C. a place to live only."],
+                                                                    "pilihan" => [
+                                                                        "<b>A.</b> a place to live and regular classes",
+                                                                        "<b>B.</b> regular classes only",
+                                                                        "<b>C.</b> a place to live only."
+                                                                    ],
                                                                     "name" => "jawaban_reading[15]",
                                                                     "jawaban" => $listening_reading[55][1],
                                                                     "status" => $listening_reading[55][2],
@@ -539,7 +583,11 @@
                                                                 [
                                                                     "no" => 17,
                                                                     "soal" => "Smoking is",
-                                                                    "pilihan" => ["A. allowed in University housing", "B. not allowed in University housing", "C. allowed only in certain areas in University housing."],
+                                                                    "pilihan" => [
+                                                                        "<b>A.</b> allowed in University housing",
+                                                                        "<b>B.</b> not allowed in University housing",
+                                                                        "<b>C.</b> allowed only in certain areas in University housing."
+                                                                    ],
                                                                     "name" => "jawaban_reading[16]",
                                                                     "jawaban" => $listening_reading[56][1],
                                                                     "status" => $listening_reading[56][2],
@@ -547,7 +595,11 @@
                                                                 [
                                                                     "no" => 18,
                                                                     "soal" => "University townhouses are available for",
-                                                                    "pilihan" => ["A. full-time students only", "B. part-time students only", "C. all students."],
+                                                                    "pilihan" => [
+                                                                        "<b>A.</b> full-time students only",
+                                                                        "<b>B.</b> part-time students only",
+                                                                        "<b>C.</b> all students."
+                                                                    ],
                                                                     "name" => "jawaban_reading[17]",
                                                                     "jawaban" => $listening_reading[57][1],
                                                                     "status" => $listening_reading[57][2],
@@ -555,7 +607,11 @@
                                                                 [
                                                                     "no" => 19,
                                                                     "soal" => "Accommodation in the area surrounding the university is",
-                                                                    "pilihan" => ["A. scarce", "B. plentiful", "C. scarce and expensive."],
+                                                                    "pilihan" => [
+                                                                        "<b>A.</b> scarce",
+                                                                        "<b>B.</b> plentiful",
+                                                                        "<b>C.</b> scarce and expensive."
+                                                                    ],
                                                                     "name" => "jawaban_reading[18]",
                                                                     "jawaban" => $listening_reading[58][1],
                                                                     "status" => $listening_reading[58][2],

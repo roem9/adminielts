@@ -91,7 +91,7 @@
                                             Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer<br>
                                         </p>
                                         <div class="">
-                                            <p><center>‘Animal Talk’</center></p>
+                                            <p><center><h3>‘Animal Talk’</h3></center></p>
                                             <p>
                                             This programme is about communication systems of killer whales and elephants. Both of these are mammals which have strong 6)<?= soal_isian_ielts("jawaban_listening[5]", $listening_reading[5][1], $listening_reading[5][2])?>, live for a long time and have large 7)<?= soal_isian_ielts("jawaban_listening[6]", $listening_reading[6][1], $listening_reading[6][2])?>. Killer whales communication mainly through 8)<?= soal_isian_ielts("jawaban_listening[7]", $listening_reading[7][1], $listening_reading[7][2])?> in the water but little is known about the air in a process which is called 9)<?= soal_isian_ielts("jawaban_listening[8]", $listening_reading[8][1], $listening_reading[8][2])?> because the message cannot be heard by humans, and they can also receive messages through their 10)<?= soal_isian_ielts("jawaban_listening[9]", $listening_reading[9][1], $listening_reading[9][2])?>.
                                             </p>
@@ -165,7 +165,9 @@
                                                     "no" => 21,
                                                     "soal" => "Phoebe’s main reason for choosing her topic was that",
                                                     "pilihan" => [
-                                                        "A. her classmate had been very interested in it", "B. it would help prepare her for her first teaching post", "C. she had been inspired by a particular book"
+                                                        "<b>A.</b> her classmate had been very interested in it",
+                                                        "<b>B.</b> it would help prepare her for her first teaching post",
+                                                        "<b>C.</b> she had been inspired by a particular book"
                                                     ],
                                                     "name" => "jawaban_listening[20]",
                                                     "jawaban" => $listening_reading[20][1],
@@ -175,7 +177,9 @@
                                                     "no" => 22,
                                                     "soal" => "Phoebe’s main research question relate to ",
                                                     "pilihan" => [
-                                                        "A. the effect of teacher discipline", "B. the variety of learning activities", "C. levels of pupil confidence"
+                                                        "<b>A.</b> the effect of teacher discipline",
+                                                        "<b>B.</b> the variety of learning activities",
+                                                        "<b>C.</b> levels of pupil confidence"
                                                     ],
                                                     "name" => "jawaban_listening[21]",
                                                     "jawaban" => $listening_reading[21][1],
@@ -185,7 +189,9 @@
                                                     "no" => 23,
                                                     "soal" => "Phoebe was most surprised by her finding that",
                                                     "pilihan" => [
-                                                        "A. gender did not influence behavior significantly", "B. girls were more negative about school than boys", "C. boys were more talkative than girls in class"
+                                                        "<b>A.</b> gender did not influence behavior significantly",
+                                                        "<b>B.</b> girls were more negative about school than boys",
+                                                        "<b>C.</b> boys were more talkative than girls in class"
                                                     ],
                                                     "name" => "jawaban_listening[22]",
                                                     "jawaban" => $listening_reading[22][1],
@@ -195,7 +201,9 @@
                                                     "no" => 24,
                                                     "soal" => "Regarding teaching. Phoebe says she has learned that",
                                                     "pilihan" => [
-                                                        "A. teachers should be flexible in unpredictable ways", "B. brighter children learn from supporting weaker ones", "C. children vary from each other in unpredictable ways"
+                                                        "<b>A.</b> teachers should be flexible in unpredictable ways",
+                                                        "<b>B.</b> brighter children learn from supporting weaker ones",
+                                                        "<b>C.</b> children vary from each other in unpredictable ways"
                                                     ],
                                                     "name" => "jawaban_listening[23]",
                                                     "jawaban" => $listening_reading[23][1],
@@ -205,7 +213,9 @@
                                                     "no" => 25,
                                                     "soal" => "Tony is particularly impressed by Phoebe’s ability to",
                                                     "pilihan" => [
-                                                        "A. recognize the limitations of such small-scale research", "B. reflect on her own research experience in an interesting way", "C. design her research in such a way as to minimize difficulties"
+                                                        "<b>A.</b> recognize the limitations of such small-scale research",
+                                                        "<b>B.</b> reflect on her own research experience in an interesting way",
+                                                        "<b>C.</b> design her research in such a way as to minimize difficulties"
                                                     ],
                                                     "name" => "jawaban_listening[24]",
                                                     "jawaban" => $listening_reading[24][1],
@@ -268,7 +278,9 @@
                                                     "no" => 31,
                                                     "soal" => "The full effects of global warming will",
                                                     "pilihan" => [
-                                                        "A. be felt right away", "B. devastate the earth very soon", "C. not be known for many, many years"
+                                                        "<b>A.</b> be felt right away",
+                                                        "<b>B.</b> devastate the earth very soon",
+                                                        "<b>C.</b> not be known for many, many years"
                                                     ],
                                                     "name" => "jawaban_listening[30]",
                                                     "jawaban" => $listening_reading[30][1],
@@ -278,7 +290,9 @@
                                                     "no" => 32,
                                                     "soal" => "Climate change will make",
                                                     "pilihan" => [
-                                                        "A. an existing problem even worse", "B. the earth a more comfortable place to live", "C. it possible to grow more food for people"
+                                                        "<b>A.</b> an existing problem even worse",
+                                                        "<b>B.</b> the earth a more comfortable place to live",
+                                                        "<b>C.</b> it possible to grow more food for people"
                                                     ],
                                                     "name" => "jawaban_listening[31]",
                                                     "jawaban" => $listening_reading[31][1],
@@ -368,7 +382,7 @@
                                                     <div class="card-body ps-4" style="height: 600px; overflow: scroll">
                                                         <p class="question">
                                                             Questions 1-6<br>
-                                                            <i>Reading Passage 1 has seven paragraphs, A-G. Choose the correct heading for paragraphs B-G from the list of headings below. Write the correct number, i-ix, in boxes 1-6 on your answer sheet. </i>
+                                                            <i>Reading passage 1 has seven paragraphs. Choose the correct heading for paragraphs A-F from the list of headings below. Write the correct number i-ix, in boxes 1-6 on your answer sheet. </i>
                                                         </p>
                 
                                                         <table class="table">
