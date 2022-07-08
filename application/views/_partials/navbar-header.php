@@ -9,7 +9,7 @@
         </a>
     </h1>
     <div class="navbar-nav flex-row order-md-last">
-        <?php if($menu == "Item") :?>
+        <!-- <?php if($menu == "Item") :?>
             <div class="nav-item dropdown d-md-flex me-1">
                 <a href="#addItem" class="nav-link px-0 addItem" data-bs-toggle="modal" tabindex="-1" aria-label="Show notifications">
                     <svg width="24" height="24">
@@ -24,7 +24,7 @@
                     </svg>
                 </a>
             </div>
-        <?php endif;?>
+        <?php endif;?> -->
         <div class="nav-item dropdown">
         <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
             <!-- <span class="avatar avatar-sm" style="background-image: url(<?= base_url()?>assets/tabler-icons-1.39.1/icons/user.svg)"></span> -->
