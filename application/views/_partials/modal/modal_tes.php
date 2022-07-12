@@ -35,6 +35,9 @@
                             <option value="Soal_003">Soal_003</option>
                             <option value="Soal_GT_003">Soal_GT_003</option>
                             <option value="Soal_Academic_Post_Test">Soal_Academic_Post_Test</option>
+                            <option value="Soal_Academic_Pretest">Soal_Academic_Pretest</option>
+                            <option value="Soal_General_Post_Test">Soal_General_Post_Test</option>
+                            <option value="Soal_General_Pretest">Soal_General_Pretest</option>
                         </select>
                         <label for="id_soal_add">Soal</label>
                     </div>
@@ -120,6 +123,9 @@
                         <option value="Soal_003">Soal_003</option>
                         <option value="Soal_GT_003">Soal_GT_003</option>
                         <option value="Soal_Academic_Post_Test">Soal_Academic_Post_Test</option>
+                        <option value="Soal_Academic_Pretest">Soal_Academic_Pretest</option>
+                        <option value="Soal_General_Post_Test">Soal_General_Post_Test</option>
+                        <option value="Soal_General_Pretest">Soal_General_Pretest</option>
                     </select>
                     <label for="id_soal_edit">Soal</label>
                 </div>

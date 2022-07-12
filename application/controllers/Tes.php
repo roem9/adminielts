@@ -87,6 +87,12 @@ class Tes extends MY_Controller {
             $this->load->view("pages/soal/soal-ielts-003", $jawaban);
         } else if($tes['tipe_soal'] == "Soal_Academic_Post_Test"){
             $this->load->view("pages/soal/soal-ielts-academic-post-test", $jawaban);
+        } else if($tes['tipe_soal'] == "Soal_Academic_Pretest"){
+            $this->load->view("pages/soal/soal-ielts-academic-pretest", $jawaban);
+        } else if($tes['tipe_soal'] == "Soal_General_Post_Test"){
+            $this->load->view("pages/soal/soal-ielts-general-post-test", $jawaban);
+        } else if($tes['tipe_soal'] == "Soal_General_Pretest"){
+            $this->load->view("pages/soal/soal-ielts-general-pretest", $jawaban);
         }
     }
 

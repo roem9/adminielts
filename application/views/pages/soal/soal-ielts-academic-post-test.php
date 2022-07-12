@@ -73,7 +73,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Country of origin</td>
-                                                    <td><b>2])</b> <?= soal_isian_ielts("jawaban_listening[1]", $listening_reading[1][1], $listening_reading[1][2])?></td>
+                                                    <td><b>2)</b> <?= soal_isian_ielts("jawaban_listening[1]", $listening_reading[1][1], $listening_reading[1][2])?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Date of arrival</td>
@@ -250,7 +250,7 @@
                                         </p>
 
                                         <p>
-                                            Chance to research and <b>22])</b> <?= soal_isian_ielts("jawaban_listening[21]", $listening_reading[21][1], $listening_reading[21][2])?> progress of educational change
+                                            Chance to research and <b>22)</b> <?= soal_isian_ielts("jawaban_listening[21]", $listening_reading[21][1], $listening_reading[21][2])?> progress of educational change
                                             Investigate influence of culture and <b>23)</b> <?= soal_isian_ielts("jawaban_listening[22]", $listening_reading[22][1], $listening_reading[22][2])?> on education
                                             Argue advantages and disadvantages of reorganisation of public education in own country with regard to globalisation
                                         </p>
@@ -315,10 +315,6 @@
                                         <p>Vaccination is a way to cause <b>33)</b> <?= soal_isian_ielts("jawaban_listening[32]", $listening_reading[32][1], $listening_reading[32][2])?> immunisation by introducing a small amount of pathogen into the body – just enough for the body’s <b>34)</b> <?= soal_isian_ielts("jawaban_listening[33]", $listening_reading[33][1], $listening_reading[33][2])?> to react by making antibodies. Passive immunisation can be used as a way of treating someone who is already sick. Proteins from animal <b>35)</b> <?= soal_isian_ielts("jawaban_listening[34]", $listening_reading[34][1], $listening_reading[34][2])?> are introduced into the patient to give him the necessary antibodies to fight the disease.</p>
                                         <p>Dr. Edward Jenner observed that people who had suffered and recovered from a serious disease called smallpox did not get it again. He also noted that victims of a milder disease, cowpox, which they caught from <b>36)</b> <?= soal_isian_ielts("jawaban_listening[35]", $listening_reading[35][1], $listening_reading[35][2])?>, were immune to smallpox. He carried out a successful <b>37)</b> <?= soal_isian_ielts("jawaban_listening[36]", $listening_reading[36][1], $listening_reading[36][2])?> by deliberately giving a child cowpox in order to make him immune to smallpox. Antibodies are produced by micro-organisms to fight bacterial <b>38)</b> <?= soal_isian_ielts("jawaban_listening[37]", $listening_reading[37][1], $listening_reading[37][2])?>. Y-shaped antibodies can prevent antigens and repair the <b>39)</b> <?= soal_isian_ielts("jawaban_listening[38]", $listening_reading[38][1], $listening_reading[38][2])?>. The agglutination can be seen by <b>40)</b> <?= soal_isian_ielts("jawaban_listening[39]", $listening_reading[39][1], $listening_reading[39][2])?> eyes to determine patient’s condition. </p>
                                     </div>
-                                </div>
-
-                                <div class="d-flex justify-content-end">
-                                    <a href="javascript:void(0)" class="btn btn-success btnTransisiDua">Next<?= tablerIcon("arrow-narrow-right", "me-0")?></a>
                                 </div>
                             </div>
 
@@ -1051,28 +1047,24 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="d-flex justify-content-end">
-                                    <a href="javascript:void(0)" class="btn btn-success btnTransisiTiga">Next<?= tablerIcon("arrow-narrow-right", "me-0")?></a>
-                                </div>
                             </div>
 
                             <div class="sesi-writing" style="display:nones">
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <p class="question mb-3">
-                                            IELTS WRITING TASK ONE<br>
-                                            You should spend about 20 minutes on this task 
-                                        </p>
-
-                                        <p><i>The graph below shows unemployment rates in the US and Japan from March 1993 to 1999. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</i></p>
-                                        <p>Write at least 150 words.</p>
-
-                                        <img src="<?= base_url()?>assets/img/writing-academic-post-test-001.jpg" alt="">
+                                        <img src="<?= base_url()?>assets/img/writing-academic-post-test-001.png" alt="">
 
                                         <span>Type your answer here</span>
                                         <textarea id="textarea-1" class="form-control mb-3" name="text_writing[0]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"><?= $writing[0]?></textarea>
-                                        <p><?= str_word_count($writing[0])?> words</p>
+                                        <?php
+                                            if($writing[0] != ""){
+                                                $text = $writing[0];
+                                                $text = explode(" ", $text);
+                                            } else {
+                                                $text = [];
+                                            }
+                                        ?>
+                                        <p><?= count($text)?> words</p>
                                     </div>
                                 </div>
 
@@ -1082,20 +1074,35 @@
                                             IELTS WRITING TASK TWO<br>
                                             You should spend about 40 minutes on this task<br>
                                         </p>
-
+                                        
+                                        <p>Write about the following topic:</p>
                                         <table class="table">
                                             <tr>
                                                 <td>
-                                                    Some people believe that living in big cities is becoming more difficult. Others believe that it is getting easier. Discuss both views and give your own opinion.
+                                                    <i>
+                                                        Being a celebrity-such as a famous film star or sports personality-brings problems as well as benefits. <br>
+                                                        Do you think that being a celebrity brings more benefits or more problems?
+                                                    </i>
                                                 </td>
                                             </tr>
                                         </table>
 
-                                        <p>Write at least 250 words.</p>
-
+                                        <p>
+                                            Give reasons for your answer and include any relevant examples from your own knowledge or experience<br>
+                                            Write at least 250 words.
+                                        </p>
+                                        
                                         <span>Type your answer here</span>
                                         <textarea id="textarea-2" class="form-control mb-3" name="text_writing[1]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"><?= $writing[1]?></textarea>
-                                        <p><?= str_word_count($writing[1])?> words</p>
+                                        <?php
+                                            if($writing[1] != ""){
+                                                $text = $writing[1];
+                                                $text = explode(" ", $text);
+                                            } else {
+                                                $text = [];
+                                            }
+                                        ?>
+                                        <p><?= count($text)?> words</p>
                                     </div>
                                 </div>
 
