@@ -899,7 +899,7 @@
                                             Writing Task 1
                                         </p>
 
-                                        <table class="table">
+                                        <!-- <table class="table">
                                             <tr>
                                                 <td>
                                                     <p>
@@ -916,6 +916,22 @@
                                             <center>
                                                 <img src="<?= base_url()?>assets/img/writing-002.jpg" alt="" height="550px">
                                             </center>
+                                        </div> -->
+
+                                        <table class="table">
+                                            <tr>
+                                                <td>
+                                                    <p>
+                                                        <b>The chart below shows the unemployment rate and the number of people leaving Ireland from 1988 to 2008.</b>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <div class="">
+                                            <center>
+                                                <img src="<?= base_url()?>assets/img/writing-002.jpeg" alt="" height="550px">
+                                            </center>
                                         </div>
 
                                         <span>Type your answer here</span>
@@ -930,7 +946,7 @@
                                             Writing Task 2
                                         </p>
 
-                                        <table class="table">
+                                        <!-- <table class="table">
                                             <tr>
                                                 <td>
                                                     <p>
@@ -938,6 +954,19 @@
                                                     </p>
                                                     <p>
                                                         <i>To what extent do you agree or disagree?</i>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table> -->
+
+                                        <table class="table">
+                                            <tr>
+                                                <td>
+                                                    <p>
+                                                        <b>Some people think that older school children should learn a wide range of subjects and develop knowledge. Others think that they should only study a small number of subjects in details. </b>
+                                                    </p>
+                                                    <p>
+                                                        <b>Discuss both views and give your opinion.</b>
                                                     </p>
                                                 </td>
                                             </tr>
