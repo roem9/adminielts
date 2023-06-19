@@ -926,12 +926,24 @@
                                             Writing Task 1<br>
                                             You should spend about 20 minutes on this task.
                                         </p>
+                                        
+                                        <p><i>You are organising a seminar for your company. Write a letter to the manager of another department inviting them to give a presentation at the seminar.</i></p>
+                                        <p><b>In your letter,</b></p>
+                                        <ul type="radio">
+                                            <li>give details of the seminar</li>
+                                            <li>invite them to give a presentation and say why you are inviting them</li>
+                                            <li>say what the presentation should be about</li>
+                                        </ul>
+                                        <p>Write at least <b>150</b> words.</p>
 
-                                        <p>You have a penfriend living in another country and he/she is curious to know about the major news items in your country.</p>
+                                        <p>You do <b>NOT</b> need to write any addresses.</p>
+                                        <p>Begin your letter as follows:</p>
+                                        <p><b>Dear ....................,</b></p>
+                                        <!-- <p>You have a penfriend living in another country and he/she is curious to know about the major news items in your country.</p>
                                         <p>Briefly describe ONE news story that has been on TV, onl the radio, or in the newspapers in your country, and explain why people are interested in it.</p>
                                         <p>You should write at least 150 words.</p>
                                         <p>You do NOT need to write your own address. Begin your letter as follows:</p>
-                                        <p>Dear _______,</p>
+                                        <p>Dear _______,</p> -->
 
                                         <span>Type your answer here</span>
                                         <textarea class="form-control mb-3" name="text_writing[0]" data-bs-toggle="autosize" placeholder="" style="overflow: hidden scroll; overflow-wrap: break-word; resize: none; height: 56px;"><?= $writing[0]?></textarea>
