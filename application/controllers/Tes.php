@@ -238,34 +238,23 @@ class Tes extends MY_Controller {
     }
     
     public function sertifikat($id){
-        $peserta = $this->tes->get_one("peserta_toefl", ["md5(id)" => $id]);
+        $peserta = $this->tes->get_one("peserta_ielts", ["md5(id)" => $id]);
         $tes = $this->tes->get_one("tes", ["id_tes" => $peserta['id_tes']]);
-        $peserta['nama'] = $peserta['nama'];
-        $peserta['t4_lahir'] = ucwords(strtolower($peserta['t4_lahir']));
-        $peserta['hari'] = date('d', strtotime($tes['tgl_tes']));
-        $peserta['tahun'] = date('y', strtotime($tes['tgl_tes']));
-        $peserta['bulan'] = getHurufBulan(date('m', strtotime($tes['tgl_tes'])));
-        $peserta['listening'] = poin("Listening", $peserta['nilai_listening']);
-        $peserta['structure'] = poin("Structure", $peserta['nilai_structure']);
-        $peserta['reading'] = poin("Reading", $peserta['nilai_reading']);
-        $peserta['tgl_tes'] = $tes['tgl_tes'];
-
-        $skor = ((poin("Listening", $peserta['nilai_listening']) + poin("Structure", $peserta['nilai_structure']) + poin("Reading", $peserta['nilai_reading'])) * 10) / 3;
-        $peserta['skor'] = $skor;
-
-        $skor = round($skor);
+        $peserta['nama'] = $peserta['first_name'] .' '. $peserta['last_name'];
+        // $peserta['t4_lahir'] = ucwords(strtolower($peserta['t4_lahir']));
+        $data['peserta'] = $peserta;
+        $data['hari'] = date('d', strtotime($tes['tgl_tes']));
+        $data['tahun'] = date('y', strtotime($tes['tgl_tes']));
+        $data['bulan'] = getHurufBulan(date('m', strtotime($tes['tgl_tes'])));
+        $data['tgl_tes'] = $tes['tgl_tes'];
+        $data['tipe_tes'] = $tes['tipe_tes'];
         
-        $peserta['no_doc'] = "T.{$peserta['no_doc']}{$peserta['hari']}{$peserta['bulan']}{$peserta['tahun']}";
-
-        $peserta['config'] = $this->tes->config();
-        $peserta['id_tes'] = $peserta['id_tes'];
-        $peserta['kolaborasi'] = $tes['kolaborasi'];
-        $peserta['size_logo'] = $tes['size_logo'];
+        // $data['no_doc'] = "I.{$peserta['no_doc']}{$peserta['hari']}{$peserta['bulan']}{$peserta['tahun']}";
         
         $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
         $fontData = $defaultFontConfig['fontdata'];
         
-        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210, 297], 'orientation' => 'L',
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210, 297], 'orientation' => 'P',
         // , 'margin_top' => '43', 'margin_left' => '25', 'margin_right' => '25', 'margin_bottom' => '35',
             'fontdata' => $fontData + [
                 'rockb' => [
@@ -293,20 +282,9 @@ class Tes extends MY_Controller {
             ], 
         ]);
 
-        if($tes['tipe_tes'] == "Tes TOEFL Umum"){
-            $mpdf->SetTitle("{$peserta['nama']}");
-            $mpdf->WriteHTML($this->load->view('pages/tes/sertifikat-umum', $peserta, TRUE));
-            $mpdf->Output("{$peserta['nama']}.pdf", "I");
-        } else if($tes['tipe_tes'] == "Tes TOEFL Kolaborasi"){
-            $mpdf->SetTitle("{$peserta['nama']}");
-            $mpdf->WriteHTML($this->load->view('pages/tes/sertifikat-kolaborasi', $peserta, TRUE));
-            $mpdf->Output("{$peserta['nama']}.pdf", "I");
-        } else if($tes['tipe_tes'] == "Tes TOEFL Kursusan"){
-            $mpdf->SetTitle("{$peserta['nama']}");
-            $mpdf->WriteHTML($this->load->view('pages/tes/sertifikat-kursusan', $peserta, TRUE));
-            $mpdf->Output("{$peserta['nama']}.pdf", "I");
-        }
-
+        $mpdf->SetTitle("{$peserta['first_name']} {$peserta['last_name']}");
+        $mpdf->WriteHTML($this->load->view('pages/tes/sertifikat-ielts', $data, TRUE));
+        $mpdf->Output("{$peserta['first_name']} {$peserta['last_name']}.pdf", "I");
     }
     
     public function nilai(){

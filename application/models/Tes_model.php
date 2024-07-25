@@ -58,10 +58,13 @@ class Tes_model extends MY_Model {
     public function loadHasil($id){
         $config = $this->config();
 
-        $this->datatables->select("id, id_tes, first_name, last_name, email, nilai_listening, nilai_reading, nilai_writing, nilai_speaking");
+        $this->datatables->select("id, id_tes, first_name, last_name, email, nilai_listening, nilai_reading, nilai_writing, nilai_speaking, sertifikat, no_doc");
         $this->datatables->from("peserta_ielts");
         $this->datatables->where("md5(id_tes)", $id);
 
+        $this->datatables->add_column('full', '
+            <a href="'.base_url().'tes/sertifikat/$1" target="_blank" class="btn btn-info">'.tablerIcon("award", "me-1").'</a>
+        ', 'md5(id)');
         $this->datatables->add_column('action','
                 <span class="dropdown">
                     <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">
@@ -76,6 +79,10 @@ class Tes_model extends MY_Model {
                         <a class="dropdown-item" href="'.base_url("tes/jawaban/$2").'" target="_blank" data-id="$1">
                             '.tablerIcon("info-circle", "me-1").'
                             Jawaban Peserta
+                        </a>
+                        <a class="dropdown-item" href="'.$config[1]['value'].'/sertifikat/no/$2" target="_blank">
+                            '.tablerIcon("award", "me-1").'
+                            Link Sertifikat
                         </a>
                     </div>
                 </span>', 'id, md5(id)');

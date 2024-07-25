@@ -20,7 +20,8 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 # /assets/logo/
 # /assets/myaudio/
 # /assets/img/logo.png
-# /assets/qrcode/
+/assets/qrcode/
+index.php
 
 # IDE Files
 #-------------------------
